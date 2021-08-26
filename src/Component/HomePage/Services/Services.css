@@ -1,0 +1,14 @@
+.service-logo{
+    width: 80px;
+}
+@media (max-width:700px){
+    .service-logo{
+        width: 50px;
+    }
+}
+.service-card:hover{
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: tomato;
+    box-shadow: 2px 2px 4px 4px gray;
+}

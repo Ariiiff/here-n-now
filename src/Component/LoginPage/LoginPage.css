@@ -1,0 +1,16 @@
+.company-logo{
+    width: 180px;
+}
+.login-card{
+    width: 50%;
+    border: 2px solid gray;
+}
+.login-button{
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+@media (max-width:1000px){
+    .login-card{
+        width: 90%;
+    }
+}
