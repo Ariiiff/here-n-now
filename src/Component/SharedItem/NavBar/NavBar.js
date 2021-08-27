@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.jpg';
 import './NavBar.css';
+import { useLocation, useHistory } from 'react-router-dom'
 
 const NavBar = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const location = useLocation();
+    const history = useHistory();
+    const {pathname} = location;
+    console.log(location.pathname)
     
     return (
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -22,27 +27,29 @@ const NavBar = () => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-5">
                     <li class="nav-item active">
-                        <Link style={{textDecoration: "none"}} to="/"><a class="nav-link mr-3 font-weight-bold">Home <span class="sr-only">(current)</span></a></Link>
+                        <Link style={{textDecoration: "none"}} to="/"><a class="nav-link">Home <span class="sr-only">(current)</span></a></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Client</a>
+                        <a class="nav-link"
+                        onClick={() => pathname === "/" ? window.scrollTo(0, 150) : history.push("/")}
+                        >Our Client</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Services</a>
+                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 650):  history.push("/")}>Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Works</a>
+                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 1250) : history.push("/")}>Our Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Contact Us</a>
+                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 1750) : history.push("/")}>Contact Us</a>
                     </li>
-                    <li class="nav-item">
-                        <Link style={{textDecoration: "none"}} to="/admin/serviceList" class="nav-link mr-3 font-weight-bold" >Admin</Link>
-                    </li>
+                    {/* <li class="nav-item">
+                        <Link style={{textDecoration: "none"}} to="/admin/serviceList" class="nav-link" >Admin</Link>
+                    </li> */}
                     <li class="nav-item">
                         {
-                            loggedInUser.isLoggedIn ? <p className="nav-link mr-3 text-success font-weight-bold">{loggedInUser.name}</p>
-                            : <Link to="/login"><p className="nav-link mr-3 font-weight-bold">Login</p></Link>
+                            loggedInUser.isLoggedIn ? <p className="nav-link text-success">{loggedInUser.name}</p>
+                            : <Link to="/login"><p className="nav-link">Login</p></Link>
                         }
                         
                     </li>

@@ -39,9 +39,10 @@ const Services = () => {
     ];
 
     const services = serviceItem.concat(serviceProvides);
+
     return (
         <div className="my-5 p-5">
-            <h3 className='text-center my-5'>Provide awesome <span className='text-success'>services</span></h3>
+            <h3 className='text-center my-5'>Provide awesome <span className='text-success'>Courses</span></h3>
             <Link style={{textDecoration: "none"}} className="text-dark" to="/customer/placeOrder"><div className='row p-2'>
                 {
                     services.map( service => <ProvidedServices key={service._id} service={service}></ProvidedServices>)

@@ -28,7 +28,7 @@ const ProvidedServices = (props) => {
                 }
                 
                 <h4>{name}</h4>
-                <small>{description}</small>
+                <p class="service_description">{description}</p>
             </div>
             
         </div>

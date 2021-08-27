@@ -8,7 +8,13 @@
     height: 60px;
     border-radius: 50%;
 }
-
+.nav-item{
+    margin-right: 10px;
+    font-weight: bolder;
+}
+.nav-link{
+    cursor: pointer;
+}
 .company-logoName{
     margin-top: 5px;
     margin-left: 15px;
