@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import ProvidedServices from './ProvidedServices/ProvidedServices';
 import webDesign from '../../../images/icons/service1.png';
-import webDevelopment from '../../../images/icons/service2.png';
-import graphicDesign from '../../../images/icons/service3.png';
+import graphicDesign from '../../../images/icons/service2.png';
+import webDevelopment from '../../../images/icons/service3.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -20,7 +20,7 @@ const Services = () => {
     const serviceItem = [
         {
             _id : 1,
-            name : "Web & Mobile Design",
+            name : "Mobile App Design",
             img : webDesign,
             description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ex excepturi nobis, beatae cumque aspernatur."
         },

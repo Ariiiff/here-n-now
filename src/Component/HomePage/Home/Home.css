@@ -1,13 +1,13 @@
 .header-background {
     background: linear-gradient(
       to bottom right,
-      #FBD062 50%,
+      #eee3e7 50%,
       transparent 50.5%
     )
     no-repeat bottom, /* bottom part */
-    linear-gradient(100deg,#FBD062, #FBD062) no-repeat top;
+    linear-gradient(100deg, #eee3e7, #eee3e7) no-repeat top;
     /* top portion */
     padding-bottom: 3.5rem;
     /* color: aliceblue; */
-    background-size: 100% 3rem, 100% calc(100% - 3rem)
+    background-size: 100% 3rem, 100% calc(100% - 3rem);
 }

@@ -6,9 +6,10 @@
         width: 50px;
     }
 }
+
 .service-card:hover{
     border: 1px solid gray;
     border-radius: 5px;
-    background-color: tomato;
-    box-shadow: 2px 2px 4px 4px gray;
+    background-color: #eee3e7;
+    box-shadow: 1px 1px 0.5px 0.5px gray;
 }

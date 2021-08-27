@@ -1,9 +1,22 @@
-.company-logo{
-    width: 180px;
+.company-logoName{
+    font-weight: 800;
+    font-size: 24px;
+    font-family: cursive;
+    color: salmon;
+}
+.company-logoName > span{
+    color: orangered;
+    font-weight: 900;
+    font-size: 27px;
+}
+.login_container{
+    background-color: whitesmoke;
+    padding: 0.5rem 0rem;
 }
 .login-card{
     width: 50%;
     border: 2px solid gray;
+    border-radius: 5px;
 }
 .login-button{
     border: 1px solid gray;

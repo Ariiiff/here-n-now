@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import logo from '../../../images/logos/logo.png';
+import logo from '../../../images/logos/logo.jpg';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -11,7 +11,10 @@ const NavBar = () => {
     
     return (
         <nav class="navbar navbar-expand-lg navbar-light">
-            <Link to="/"><a class="navbar-brand"> <img className='logo' src={logo} alt="" srcset=""/> </a></Link>
+            <Link to="/"><a class="navbar-brand brand_style"> 
+                <img className='logo' src={logo} alt="" srcset=""/> 
+                <p className="company-logoName">here<span>N</span>now</p>
+            </a></Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,10 +25,13 @@ const NavBar = () => {
                         <Link style={{textDecoration: "none"}} to="/"><a class="nav-link mr-3 font-weight-bold">Home <span class="sr-only">(current)</span></a></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Portfolio</a>
+                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Client</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Team</a>
+                        <a class="nav-link mr-3 font-weight-bold" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Works</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-3 font-weight-bold" href="#">Contact Us</a>
@@ -35,15 +41,15 @@ const NavBar = () => {
                     </li>
                     <li class="nav-item">
                         {
-                            loggedInUser.isLoggedIn ? <h6 className='m-3'>{loggedInUser.name}</h6>
-                            : <Link to="/login"><button className="btn btn-dark mr-3 px-4">Login</button></Link>
+                            loggedInUser.isLoggedIn ? <p className="nav-link mr-3 text-success font-weight-bold">{loggedInUser.name}</p>
+                            : <Link to="/login"><p className="nav-link mr-3 font-weight-bold">Login</p></Link>
                         }
                         
                     </li>
                 </ul>
                 
-  </div>
-</nav>
+            </div>
+        </nav>
     );
 };
 

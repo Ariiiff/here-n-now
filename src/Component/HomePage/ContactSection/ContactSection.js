@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactSection = () => {
     const backgroundStyle = {
-        backgroundColor : "#FBD062"
+        backgroundColor : "#eee3e7"
     }
     return (
         <section style={backgroundStyle} className="row">

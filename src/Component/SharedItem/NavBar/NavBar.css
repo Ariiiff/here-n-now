@@ -1,3 +1,26 @@
-.logo{
-    width: 120px;
+.brand_style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.company-logoName{
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: 800;
+    font-size: 24px;
+    font-family: cursive;
+    color: salmon;
+}
+
+.company-logoName > span{
+    color: orangered;
+    font-weight: 900;
+    font-size: 27px;
+}
+
