@@ -12,7 +12,13 @@ const NavBar = () => {
     const location = useLocation();
     const history = useHistory();
     const {pathname} = location;
-    console.log(location.pathname)
+    console.log(location.pathname);
+
+
+    const handleScroll = (id) => {
+        const anchor = document.querySelector(`#${id}`);
+        anchor.scrollIntoView({ behavior: 'smooth', block: 'center'});
+    }
     
     return (
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -26,23 +32,46 @@ const NavBar = () => {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-5">
-                    <li class="nav-item active">
+                    {
+                        (pathname === "/" && <li class="nav-item active">
                         <Link style={{textDecoration: "none"}} to="/"><a class="nav-link">Home <span class="sr-only">(current)</span></a></Link>
-                    </li>
-                    <li class="nav-item">
+                        </li>)
+                    }
+
+                    {
+                        (pathname === "/" && <li class="nav-item">
                         <a class="nav-link"
-                        onClick={() => pathname === "/" ? window.scrollTo(0, 150) : history.push("/")}
+                        onClick={() => pathname === "/" ? handleScroll('client') : history.push("/")}
                         >Our Client</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 650):  history.push("/")}>Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 1250) : history.push("/")}>Our Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onClick={() => pathname === "/" ? window.scrollTo(0, 1750) : history.push("/")}>Contact Us</a>
-                    </li>
+                        </li>)
+                    }
+                    
+
+                    {
+                        (pathname === "/" && <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Courses
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" onClick={() => pathname === "/" ? handleScroll('web_app') : history.push("/")}>Web App Development</a>
+                                <a class="dropdown-item" onClick={() => pathname === "/" ? handleScroll('mobile_app') : history.push("/")}>Mobile App Development</a>
+                                <a class="dropdown-item" onClick={() => pathname === "/" ? handleScroll('design') : history.push("/")}>Design</a>
+                            </div>
+                        </li>)
+                    }
+
+                    {
+                        (pathname === "/" && <li class="nav-item">
+                            <a class="nav-link" onClick={() => pathname === "/" ? handleScroll('our_works') : history.push("/")}>Our Works</a>
+                        </li>)
+                    }
+
+                    {
+                        (pathname === "/" && <li class="nav-item">
+                            <a class="nav-link" onClick={() => pathname === "/" ? handleScroll('contact') : history.push("/")}>Contact Us</a>
+                        </li>)
+                    }
+                    
                     {/* <li class="nav-item">
                         <Link style={{textDecoration: "none"}} to="/admin/serviceList" class="nav-link" >Admin</Link>
                     </li> */}

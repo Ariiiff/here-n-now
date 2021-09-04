@@ -8,7 +8,7 @@ import './OurWorks.css';
 const OurWorks = () => {
     return (
         <div id="carouselExampleIndicators" class="carousel slide bg-dark p-5" data-ride="carousel">
-            <h4 className='text-center text-light my-5'>Here are some of <span className='text-success'>our works</span></h4>
+            <h4 id='our_works' className='text-center text-light my-5'>Here are some of <span className='text-success'>our works</span></h4>
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

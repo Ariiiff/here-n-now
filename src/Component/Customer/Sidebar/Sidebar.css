@@ -1,0 +1,12 @@
+.sidebar ul li{
+    list-style: none;
+}
+.sidebar-items{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.sidebar-items:hover{
+    color: green;
+}

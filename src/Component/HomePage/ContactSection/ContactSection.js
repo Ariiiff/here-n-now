@@ -5,7 +5,7 @@ const ContactSection = () => {
         backgroundColor : "#eee3e7"
     }
     return (
-        <section style={backgroundStyle} className="row">
+        <section id='contact' style={backgroundStyle} className="row">
             <div className="col-md-5 offset-md-1">
                 <div className="py-5 m-2">
                     <h2 className="my-4">Let us handle your <br/>project, professionally.</h2>

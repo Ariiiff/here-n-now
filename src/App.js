@@ -4,10 +4,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './Component/HomePage/Home/Home';
 import LoginPage from './Component/LoginPage/LoginPage';
+import PrivateRoute from './Component/LoginPage/PrivateRoute';
+import CustomerPlaceOrder from './Component/Customer/CustomerPlaceOrder/CustomerPlaceOrder';
 
 export const UserContext = createContext();
 
@@ -27,6 +28,9 @@ function App() {
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
+          <PrivateRoute path="/customer/placeOrder">
+            <CustomerPlaceOrder></CustomerPlaceOrder>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

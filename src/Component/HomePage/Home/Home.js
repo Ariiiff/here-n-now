@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBar from '../../SharedItem/NavBar/NavBar';
 // import ClientFeedback from '../ClientFeedback/ClientFeedback';
 import ContactSection from '../ContactSection/ContactSection';
@@ -10,6 +10,7 @@ import './Home.css';
 
 
 const Home = () => {
+
     return (
         <div className='container'>
             <div className="header-background">
