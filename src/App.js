@@ -28,9 +28,12 @@ function App() {
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
-          <PrivateRoute path="/customer/placeOrder">
+          <Route path="/customer/placeOrder">
             <CustomerPlaceOrder></CustomerPlaceOrder>
-          </PrivateRoute>
+          </Route>
+          {/* <PrivateRoute path="/customer/placeOrder">
+            <CustomerPlaceOrder></CustomerPlaceOrder>
+          </PrivateRoute> */}
         </Switch>
       </Router>
     </UserContext.Provider>

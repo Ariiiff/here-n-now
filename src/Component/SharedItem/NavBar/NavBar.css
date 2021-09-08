@@ -15,6 +15,9 @@
 .nav-link{
     cursor: pointer;
 }
+.container{
+    border-radius: 3px;
+}
 .company-logoName{
     margin-top: 5px;
     margin-left: 15px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.jpg';
@@ -7,6 +7,19 @@ import './NavBar.css';
 import { useLocation, useHistory } from 'react-router-dom'
 
 const NavBar = () => {
+
+    const [onScrolled, setOnScrolled] = useState(false);
+    const handleStickyNav = () => {
+        if(window.scrollY > 200){
+            setOnScrolled(true)
+        } else{
+            setOnScrolled(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleStickyNav)
+    })
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const location = useLocation();
@@ -21,7 +34,7 @@ const NavBar = () => {
     }
     
     return (
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav className={`navbar navbar-expand-lg navbar-light ${onScrolled ? "fixed-top scrolling-navbar container navbar-dark bg-dark px-4 py-0" : null}`}>
             <Link to="/"><a class="navbar-brand brand_style"> 
                 <img className='logo' src={logo} alt="" srcset=""/> 
                 <p className="company-logoName">here<span>N</span>now</p>
