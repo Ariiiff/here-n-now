@@ -9,6 +9,8 @@ import Home from './Component/HomePage/Home/Home';
 import LoginPage from './Component/LoginPage/LoginPage';
 import PrivateRoute from './Component/LoginPage/PrivateRoute';
 import CustomerPlaceOrder from './Component/Customer/CustomerPlaceOrder/CustomerPlaceOrder';
+import CustomerOrderItems from './Component/Customer/CustomerOrderItems/CustomerOrderItems';
+import CustomerReview from './Component/Customer/CustomerReview/CustomerReview';
 
 export const UserContext = createContext();
 
@@ -28,12 +30,15 @@ function App() {
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
-          <Route path="/customer/placeOrder">
+          <PrivateRoute path="/customer/placeOrder">
             <CustomerPlaceOrder></CustomerPlaceOrder>
-          </Route>
-          {/* <PrivateRoute path="/customer/placeOrder">
-            <CustomerPlaceOrder></CustomerPlaceOrder>
-          </PrivateRoute> */}
+          </PrivateRoute>
+          <PrivateRoute path="/customer/orderedItems">
+            <CustomerOrderItems></CustomerOrderItems>
+          </PrivateRoute>
+          <PrivateRoute path="/customer/review">
+            <CustomerReview></CustomerReview>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

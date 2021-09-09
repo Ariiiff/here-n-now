@@ -1,3 +1,6 @@
+.sidebar ul{
+    padding: 0rem !important;
+}
 .sidebar ul li{
     list-style: none;
 }
@@ -9,4 +12,10 @@
 
 .sidebar-items:hover{
     color: green;
+}
+
+@media only screen and (min-width: 700px){
+    .sidebar ul li {
+        margin-left: 0rem !important;
+    }
 }

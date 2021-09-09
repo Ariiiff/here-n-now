@@ -1,6 +1,20 @@
-  
 input[type = "file"] {
     display: none;
+}
+
+.logo{
+    margin-top: 5px;
+    margin-left: 12px;
+    font-weight: 800;
+    font-size: 24px;
+    font-family: cursive;
+    color: salmon;
+}
+
+.logo > span{
+    color: orangered;
+    font-weight: 900;
+    font-size: 27px;
 }
 
 label{
@@ -15,4 +29,33 @@ label{
     font-family: monospace;
     border: 1px solid gray;
     border-radius: 5px;
+}
+
+.form_container{
+    width: 75vw !important;
+    text-align: justify !important;
+    color: gray;
+    margin: 0rem auto;
+}
+
+@media only screen and (max-width: 700px){
+    .form_container{
+        margin: 3rem auto;
+        width: 90vw !important;
+        text-align: justify !important;
+        color: gray;
+    }
+    .header{
+        margin-top: 0.5rem;
+        margin-left: 5px !important;
+    }
+
+    .logo{
+        margin-top: 5px;
+        margin-left: 2px;
+        font-weight: 800;
+        font-size: 24px;
+        font-family: cursive;
+        color: salmon;
+    }
 }

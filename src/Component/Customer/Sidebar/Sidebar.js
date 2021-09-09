@@ -6,7 +6,7 @@ import { faShoppingBag, faCartPlus, faCommentAlt, faHome } from '@fortawesome/fr
 
 const Sidebar = () => {
     return (
-        <div className="sidebar mt-5">
+        <div className="sidebar mt-3">
             <ul>
                 <li className="my-3">
                     <Link style={{textDecoration: "none"}} to="/">

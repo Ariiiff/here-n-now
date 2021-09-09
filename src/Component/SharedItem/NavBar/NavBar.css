@@ -17,6 +17,7 @@
 }
 .container{
     border-radius: 3px;
+    transition: all 0.7s ease-in;
 }
 .company-logoName{
     margin-top: 5px;

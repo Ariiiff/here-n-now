@@ -11,6 +11,9 @@ const NavBar = () => {
     const [onScrolled, setOnScrolled] = useState(false);
     const handleStickyNav = () => {
         if(window.scrollY > 200){
+            // setTimeout(() => {
+            //     setOnScrolled(true)
+            // }, 1000)
             setOnScrolled(true)
         } else{
             setOnScrolled(false)
@@ -39,11 +42,14 @@ const NavBar = () => {
                 <img className='logo' src={logo} alt="" srcset=""/> 
                 <p className="company-logoName">here<span>N</span>now</p>
             </a></Link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button 
+            class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div 
+            class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto pr-5">
                     {
                         (pathname === "/" && <li class="nav-item active">
@@ -81,7 +87,9 @@ const NavBar = () => {
 
                     {
                         (pathname === "/" && <li class="nav-item">
-                            <a class="nav-link" onClick={() => pathname === "/" ? handleScroll('contact') : history.push("/")}>Contact Us</a>
+                            <a class="nav-link" 
+                            onClick={() => pathname === "/" ? handleScroll('contact') : history.push("/")}
+                            >Contact Us</a>
                         </li>)
                     }
                     
