@@ -4,22 +4,22 @@ import { UserContext } from '../../../../App';
 import '../Services.css';
 
 const ProvidedServices = (props) => {
-    const { id, name, description, img, image} = props.service;
+    const { id, name, serviceDescription, img, image} = props.service;
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    const handleService = (id, name, description, img, image) => {
+    const handleService = (id, name, serviceDescription, img, image) => {
         const newUser = {...loggedInUser};
         newUser.serviceId = id;
         newUser.serviceName = name;
-        newUser.serviceDescription = description;
+        newUser.serviceDescription = serviceDescription;
         newUser.serviceImg = img;
         newUser.serviceImage = image;
         setLoggedInUser(newUser);
     }
 
     return (
-        <div onClick={ () => handleService(id, name, description, img, image)} className='col-md-4 text-center service-card'>
+        <div onClick={ () => handleService(id, name, serviceDescription, img, image)} className='col-md-4 text-center service-card'>
 
             <div className='p-3'>
                 {
@@ -28,7 +28,7 @@ const ProvidedServices = (props) => {
                 }
                 
                 <h4>{name}</h4>
-                <p class="service_description">{description}</p>
+                <p class="service_description">{serviceDescription}</p>
             </div>
             
         </div>

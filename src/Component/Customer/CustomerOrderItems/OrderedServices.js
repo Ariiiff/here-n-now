@@ -1,6 +1,8 @@
 import React from 'react';
+import '../CustomerPlaceOrder/CustomerPlaceOrder.css';
 
 const OrderedServices = ({serviceInfo}) => {
+    console.log(serviceInfo)
     const card = {
         borderRadius : '10px',
         backgroundColor : 'white',
@@ -11,7 +13,8 @@ const OrderedServices = ({serviceInfo}) => {
     const status = {
         backgroundColor : "#FFE3E3",
         color : "#FF4545",
-        borderRadius: "5px"
+        borderRadius: "5px",
+        height: "35px"
     }
     return (
         <div className="col-md-6 text-left">
@@ -21,8 +24,8 @@ const OrderedServices = ({serviceInfo}) => {
                         serviceInfo.serviceImage ? <img className="service-logo" src={`data:image/jpeg;base64,${serviceInfo.serviceImage}`} alt="" srcSet="" />
                         : <img src={serviceInfo.serviceImg} className="service-logo" alt="" srcSet=""/>
                     }
-                    <h6 style={status} className="px-3 py-2 m-4">Enrolled</h6>
-                </div>
+                    <h6 style={status} className="px-2 py-2 m-2">Enrolled</h6>
+                </div> <br />
             
                 
                 <h4>{serviceInfo.service}</h4>

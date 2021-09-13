@@ -12,9 +12,9 @@ import { UserContext } from '../../../App';
 const CustomerPlaceOrder = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const {serviceName, serviceId, description, serviceImg, serviceImage} = loggedInUser;
+    const {serviceName, serviceId, serviceDescription, serviceImg, serviceImage} = loggedInUser;
 
-    console.log(loggedInUser)
+    console.log("loggedInUser", loggedInUser)
 
     const [isConfirm, setIsConfirm] = useState(false);
 
@@ -35,7 +35,7 @@ const CustomerPlaceOrder = () => {
         formData.append('email', email);
         formData.append('serviceId', serviceId);
         formData.append('service', serviceName);
-        formData.append('description', description);
+        formData.append('serviceDescription', serviceDescription);
         formData.append('serviceImg', serviceImg);
         if (serviceImage !== undefined){
             formData.append('serviceImage', serviceImage.img);
@@ -43,7 +43,7 @@ const CustomerPlaceOrder = () => {
         formData.append('details', details);
         formData.append('price', price);
 
-        console.log(formData);
+        console.log('formData', formData);
 
         fetch('https://evening-coast-46137.herokuapp.com/addCustomer', {
             method: 'POST',
@@ -51,7 +51,7 @@ const CustomerPlaceOrder = () => {
             })
             .then(response => response.json())
             .then(result => {
-                console.log(result);
+                console.log("result", result);
                 setIsConfirm(true);
             })
             .catch(err => {
@@ -78,10 +78,10 @@ const CustomerPlaceOrder = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-9 form_container">
-                    <h5>Description : </h5>
+                    <h5>serviceDescription : </h5>
                     <div style={{color: 'black'}}>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo neque enim ratione obcaecati deserunt reiciendis repellat hic id repudiandae? Illo quis voluptas doloribus ipsa corrupti. Quisquam, eum recusandae ut doloribus ullam obcaecati natus sequi laudantium laborum nemo aspernatur quia perspiciatis consequatur neque reiciendis iusto vitae voluptatem. Accusantium perferendis corrupti tempora.</p>
-                        <p>{description}</p>
+                        <p>{serviceDescription}</p>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className='my-5 mr-3 p-5 bg-light'>
 
@@ -90,10 +90,10 @@ const CustomerPlaceOrder = () => {
 
                         <input type="text" className="form-control" name="email"
                          defaultValue={loggedInUser.email} 
-                         ref={register({ required: true, maxLength: 30 })}
+                         ref={register({ required: true, maxLength: 50 })}
                          placeholder="Your email address" />
                          {errors.email && <span className="text-danger">This field is required</span>} <br />
-                        <input type="text" className="form-control" name="service" defaultValue={loggedInUser.serviceName} ref={register({ required: true, maxLength: 20 })} placeholder="Course Name" />
+                        <input type="text" className="form-control" name="service" defaultValue={loggedInUser.serviceName} ref={register({ required: true, maxLength: 200 })} placeholder="Course Name" />
                         {errors.service && <span className="text-danger">This field is required</span>} <br /> 
 
                         <textarea name="details" className="form-control" rows="5" ref={register({ required: true, maxLength: 60 })} placeholder="This course is interested to you. Because..."></textarea><br /> 

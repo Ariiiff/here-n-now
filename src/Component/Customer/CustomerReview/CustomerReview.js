@@ -40,7 +40,10 @@ const CustomerReview = () => {
         <div>
             <div className='row mt-5 mx-3'>
                 <div className="col-md-3">
-                    <Link to='/'><img src={logo} className="ml-5 mb-4" style={{width: "90px"}} alt=""/></Link>
+                    <Link to='/'>
+                        {/* <img src={logo} className="ml-5 mb-4" style={{width: "90px"}} alt=""/> */}
+                        <p className="logo">here<span>N</span>now</p>
+                    </Link>
                 </div>
                 <div className="col-md-9 d-flex justify-content-between">
                     <h4>Review</h4>

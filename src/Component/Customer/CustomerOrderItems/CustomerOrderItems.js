@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import '../CustomerPlaceOrder/CustomerPlaceOrder.css';
-import logo from '../../../images/logos/logo.jpg';
+// import logo from '../../../images/logos/logo.jpg';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
@@ -26,7 +26,10 @@ const CustomerOrderItems = () => {
         <div>
             <div className='row mt-5 mx-3'>
                 <div className="col-md-3">
-                    <Link to='/'><img src={logo} className="ml-5 mb-4" style={{ width: "90px" }} alt="" /></Link>
+                    <Link to='/'>
+                        {/* <img src={logo} className="ml-5 mb-4" style={{ width: "90px" }} alt="" /> */}
+                        <p className="logo">here<span>N</span>now</p>
+                    </Link>
                 </div>
                 <div className="col-md-9 d-flex justify-content-between">
                     <h4>Ordered Services</h4>
