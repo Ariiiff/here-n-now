@@ -57,13 +57,13 @@ const NavBar = () => {
                         </li>)
                     }
 
-                    {
+                    {/* {
                         (pathname === "/" && <li class="nav-item">
                         <a class="nav-link"
                         onClick={() => pathname === "/" ? handleScroll('client') : history.push("/")}
                         >Our Client</a>
                         </li>)
-                    }
+                    } */}
                     
 
                     {
@@ -93,9 +93,9 @@ const NavBar = () => {
                         </li>)
                     }
                     
-                    {/* <li class="nav-item">
+                    <li class="nav-item">
                         <Link style={{textDecoration: "none"}} to="/admin/serviceList" class="nav-link" >Admin</Link>
-                    </li> */}
+                    </li>
                     <li class="nav-item">
                         {
                             loggedInUser.isLoggedIn ? <p className="nav-link text-success">{loggedInUser.name}</p>
